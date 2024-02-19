@@ -76,6 +76,17 @@ notesContainer.addEventListener("click",function(e)  //e as event object
 })
 
 // Event listener for detecting changes in notes
-notesContainer.addEventListener("input", () => {
+notesContainer.addEventListener("input", () => 
+{
     updateStorage();
 });
+
+//Add line break when enter pressed
+document.addEventListener("keydown",event =>
+{
+    if(event.key === "Enter")
+    {
+        document.execCommand("insertLineBreak");
+        event.preventDefault();
+    }
+})
